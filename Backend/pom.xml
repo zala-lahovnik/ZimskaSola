@@ -11,8 +11,8 @@
 
 	<groupId>si.um.feri</groupId>
 	<artifactId>demo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<version>0.0.1</version>
+	<name>zimskaSola</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
