@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import si.um.feri.demo.info.Deposit;
 import si.um.feri.demo.info.Transfer;
 
-import java.util.Optional;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 public class PrviRest {
@@ -24,6 +25,17 @@ public class PrviRest {
     @GetMapping("info")
     public String prvi() {
         return "Zdravo";
+    }
+
+    @GetMapping("members")
+    public List<Oseba> getAllMembers() {
+        List<Oseba> members = new ArrayList<>();
+
+        Iterable<Oseba> foundMembers = osebaRepo.findAll();
+
+        foundMembers.forEach(oseba -> members.add(oseba));
+
+        return members;
     }
 
     @Operation(summary = "Add a new person")
