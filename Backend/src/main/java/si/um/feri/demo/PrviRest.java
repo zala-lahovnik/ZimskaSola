@@ -1,11 +1,16 @@
 package si.um.feri.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PrviRest {
+
+    @Autowired
+    OsebaRepository osebaRepo;
 
     @GetMapping("info")
     public String prvi() {
@@ -13,9 +18,11 @@ public class PrviRest {
     }
 
     @PostMapping("nekiPost")
-    public String dajmoNekajPostnit(String vsebina) {
-        System.out.println("Dobil sem " + vsebina);
+    public String addPerson(@RequestBody Oseba oseba) {
+        osebaRepo.save(oseba);
 
-        return vsebina;
+        System.out.println(oseba);
+
+        return "OK";
     }
 }
