@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS oseba (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(255),
+  ime VARCHAR(255),
+  priimek VARCHAR(255),
+  imetje FLOAT
+);
