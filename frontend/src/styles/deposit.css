@@ -1,0 +1,11 @@
+.deposit-container {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 200px;
+}
+
+.deposit-input-container {
+    margin-top: 20px;
+    width: 100%;
+}
