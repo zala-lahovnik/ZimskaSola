@@ -1,5 +1,5 @@
 import {Table, TableBody, TableCell, TableHead, TableRow} from "@mui/material";
-import usersContext, {UsersContext} from "../context/UsersContext";
+import {UsersContext} from "../context/UsersContext";
 import {useContext} from "react";
 
 
