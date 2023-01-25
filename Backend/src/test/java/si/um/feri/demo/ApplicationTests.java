@@ -7,7 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import si.um.feri.demo.info.FundsHelper;
 import static org.junit.jupiter.api.Assertions.*;
 
-@SpringBootTest
+//@SpringBootTest
 //@ActiveProfiles("mysql")
 public class ApplicationTests {
 
@@ -27,13 +27,13 @@ public class ApplicationTests {
         Oseba janez = new Oseba(0, "janez.novak@feri.um.si", "Janez", "Novak", 1000);
         janez = FundsHelper.withdraw(janez, 100);
 
-        assertEquals(1100, janez.getImetje());
+        assertEquals(900, janez.getImetje());
     }
 
     @Test
     public void TransferTest() {
         Oseba janez = new Oseba(0, "janez.novak@feri.um.si", "Janez", "Novak", 1000);
-        Oseba luka = new Oseba(0, "luka.kovac@feri.um.si", "Luka", "Kovač", 1000);
+        Oseba luka = new Oseba(1, "luka.kovac@feri.um.si", "Luka", "Kovač", 1000);
 
         janez = FundsHelper.withdraw(janez, 100);
         luka = FundsHelper.deposit(luka, 100);
