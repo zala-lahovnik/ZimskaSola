@@ -7,8 +7,8 @@ const Users = () => {
     const {users} = useContext(UsersContext);
 
     return (
-        <>
-            <Table>
+        <div style={{marginLeft: '150px', marginRight: '150px'}}>
+            <Table style={{marginTop: '50px'}}>
                 <TableHead>
                     <TableRow>
                         <TableCell><b>Id</b></TableCell>
@@ -42,7 +42,7 @@ const Users = () => {
                     })}
                 </TableBody>
             </Table>
-        </>
+        </div>
     )
 }
 
