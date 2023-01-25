@@ -54,7 +54,7 @@ public class PrviRest {
 
     @PostMapping("addFunds")
     public String addFunds(@RequestBody Deposit deposit) {
-        Oseba oseba = osebaRepo.findById(String.valueOf(deposit.getId())).orElse(new Oseba());
+        Oseba oseba = osebaRepo.findById(deposit.getId()).orElse(new Oseba());
 
         if(!"".equals(oseba.getIme())) {
             float currentFunds = oseba.getImetje();
@@ -72,7 +72,7 @@ public class PrviRest {
 
     @PostMapping("withdrawFunds")
     public String withdrawFunds(@RequestBody Deposit withdrawl) {
-        Oseba oseba = osebaRepo.findById(String.valueOf(withdrawl.getId())).orElse(null);
+        Oseba oseba = osebaRepo.findById(withdrawl.getId()).orElse(null);
 
         if(null != oseba) {
             float currentFunds = oseba.getImetje();
@@ -93,8 +93,8 @@ public class PrviRest {
 
     @PostMapping("transferFunds")
     public String transferFunds(@RequestBody Transfer transfer) {
-        Oseba from = osebaRepo.findById(String.valueOf(transfer.getIdFrom())).orElse(null);
-        Oseba to = osebaRepo.findById(String.valueOf(transfer.getIdTo())).orElse(null);
+        Oseba from = osebaRepo.findById(transfer.getIdFrom()).orElse(null);
+        Oseba to = osebaRepo.findById(transfer.getIdTo()).orElse(null);
 
         if(from == null || to == null)
             return "Cannot find such accounts";
