@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import si.um.feri.demo.info.Deposit;
+import si.um.feri.demo.info.FundsHelper;
 import si.um.feri.demo.info.Transfer;
 
 import java.util.ArrayList;
@@ -78,7 +79,8 @@ public class PrviRest {
             float newFunds = currentFunds - withdrawl.getAmmount();
 
             if(newFunds > -1000) {
-                oseba.setImetje(newFunds);
+                oseba = FundsHelper.withdraw(oseba, withdrawl.getAmmount());
+
                 osebaRepo.save(oseba);
                 return "Withdrawl successfull.";
             } else {

@@ -31,13 +31,14 @@ public class Oseba {
     private float imetje;
 
     public Oseba() {
-        this("", "", "");
     }
 
-    public Oseba(String email, String ime, String priimek) {
+    public Oseba(int id, String email, String ime, String priimek, float imetje) {
+        this.id = id;
         this.email = email;
         this.ime = ime;
         this.priimek = priimek;
+        this.imetje = imetje;
     }
 
     public int getId() {
